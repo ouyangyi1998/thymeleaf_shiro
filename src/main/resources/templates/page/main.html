@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>main</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+
+<body class="container">
+<br/>
+<h1 align="center">用户列表</h1>
+<br/><br/>
+<div >
+    <table class="table table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>User Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user:${users}">
+        <th scope="row" th:text="${user.id}"></th>
+        <td th:text="${user.username}"></td>
+
+            <td><a th:href="@{/main/toEdit(id=${user.id})}">edit</a></td>
+            <td><a th:href="@{/main/delete(id=${user.id})}">delete</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+</div>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+        <a th:href="@{/main/toAdd}" class="btn btn-info">add</a>
+        <a th:href="@{/user/logout}" class="btn btn-info">back</a>
+    </div>
+</div>
+
+
+</body>
+</html>

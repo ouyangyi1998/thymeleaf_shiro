@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>login</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link></head>
+<body class="container">
+<h1 align="center">账号登录</h1>
+<div class="col-sm-offset-4 col-sm-4" align="center">
+    <form th:action="@{/user/login}" method="post">
+        <div class="form-group">
+            <label for="username" class="control-label col-sm-2">username</label>
+            <div>
+                <input type="text" id="username" name="username" placeholder="username" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label" >password</label>
+            <div >
+                <input type="password" id="password" name="password" placeholder="password" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label">
+            <input type="submit" value="Submit" class="btn btn-info" />
+
+                <a th:href="@{/user/toReg}" class="btn btn-info">register</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
